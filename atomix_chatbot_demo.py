@@ -13,7 +13,7 @@ import time
 
 # --- CONFIGURATION ---
 # PASTE YOUR N8N WEBHOOK URL HERE
-N8N_WEBHOOK_URL = "https://n8n.foosignia.com/webhook/chat"
+N8N_WEBHOOK_URL = "https://n8n.foosignia.com/webhook-test/chat"
 
 # --- UI SETUP ---
 st.set_page_config(page_title="Atomix AI Support", page_icon="🤖", layout="wide")
