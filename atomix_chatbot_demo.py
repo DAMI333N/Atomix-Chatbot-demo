@@ -16,7 +16,7 @@ import time
 N8N_WEBHOOK_URL = "https://n8n.foosignia.com/webhook/chat"
 
 # --- UI SETUP ---
-st.set_page_config(page_title="Atomix AI Support", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Atomix AI Support", page_icon="🤖", layout="centered")
 
 # Custom CSS to match your Atomix Blue branding
 # Custom CSS to match your Atomix Blue branding
