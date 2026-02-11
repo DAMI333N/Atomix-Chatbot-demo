@@ -20,6 +20,7 @@ st.set_page_config(page_title="Atomix AI Support", page_icon="🤖", layout="wid
 
 # Custom CSS to match your Atomix Blue branding
 # Custom CSS to match your Atomix Blue branding
+# Custom CSS to match your Atomix Blue branding
 st.markdown("""
 <style>
     /* Force the main app background to be light grey */
@@ -27,28 +28,29 @@ st.markdown("""
         background-color: #f5f7f9; 
     }
     
-    /* Style the chat input box */
-    .stChatInput { 
-        border-radius: 10px; 
+    /* Force ALL headings (h1, h2, h3) and normal text (p, span, div) to be black */
+    h1, h2, h3, h4, h5, h6, p, span, div {
+        color: black !important;
     }
     
-    /* CRITICAL FIX: Force text color to black inside chat bubbles */
+    /* Explicitly target the title and caption specific classes if needed */
+    .stHeadingContainer h1 {
+        color: #0066cc !important; /* Atomix Blue for the main title */
+    }
+    
+    /* Fix Chat Input - ensure text you type is visible */
+    .stChatInput textarea {
+        color: black !important; 
+        caret-color: black !important;
+    }
+    
+    /* Chat Bubbles - keep them readable */
     div[data-testid="stChatMessage"] { 
         background-color: white; 
         border-radius: 15px; 
         padding: 10px; 
         box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        color: black !important; /* This fixes the unreadable text */
-    }
-    
-    /* Force markdown text inside bubbles to be black */
-    div[data-testid="stChatMessage"] p {
         color: black !important;
-    }
-
-    /* Style the header text */
-    h1 { 
-        color: #0066cc; 
     }
 </style>
 """, unsafe_allow_html=True)
