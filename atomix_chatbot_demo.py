@@ -19,17 +19,37 @@ N8N_WEBHOOK_URL = "https://n8n.foosignia.com/webhook/chat"
 st.set_page_config(page_title="Atomix AI Support", page_icon="🤖", layout="wide")
 
 # Custom CSS to match your Atomix Blue branding
+# Custom CSS to match your Atomix Blue branding
 st.markdown("""
 <style>
-    .stApp { background-color: #f5f7f9; }
-    .stChatInput { border-radius: 10px; }
-    div[data-testid="stChatMessage"] {
-        background-color: white;
-        border-radius: 15px;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    /* Force the main app background to be light grey */
+    .stApp { 
+        background-color: #f5f7f9; 
     }
-    h1 { color: #0066cc; }
+    
+    /* Style the chat input box */
+    .stChatInput { 
+        border-radius: 10px; 
+    }
+    
+    /* CRITICAL FIX: Force text color to black inside chat bubbles */
+    div[data-testid="stChatMessage"] { 
+        background-color: white; 
+        border-radius: 15px; 
+        padding: 10px; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        color: black !important; /* This fixes the unreadable text */
+    }
+    
+    /* Force markdown text inside bubbles to be black */
+    div[data-testid="stChatMessage"] p {
+        color: black !important;
+    }
+
+    /* Style the header text */
+    h1 { 
+        color: #0066cc; 
+    }
 </style>
 """, unsafe_allow_html=True)
 
